@@ -1,4 +1,10 @@
 {
+  "name": "rester",
+  "short_name": "rester",
+  "start_url": ".",
+  "theme_color": "#317EFB",
+  "background_color": "white",
+  
   "restaurants": [{
     "id": 1,
     "name": "Mission Chinese Food",
