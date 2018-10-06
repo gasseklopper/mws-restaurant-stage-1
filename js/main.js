@@ -88,18 +88,6 @@ initMap = () => {
 
   updateRestaurants();
 }
-/* window.initMap = () => {
-  let loc = {
-    lat: 40.722216,
-    lng: -73.987501
-  };
-  self.map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: loc,
-    scrollwheel: false
-  });
-  updateRestaurants();
-} */
 
 /**
  * Update page and map for current restaurants.
@@ -160,6 +148,7 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
+  image.alt = 'restaurant';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
@@ -198,13 +187,29 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 
 }
-/* addMarkersToMap = (restaurants = self.restaurants) => {
-  restaurants.forEach(restaurant => {
-    // Add marker to the map
-    const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
-    google.maps.event.addListener(marker, 'click', () => {
-      window.location.href = marker.url
-    });
-    self.markers.push(marker);
+/**
+ * Manage focus should the user use the skip links
+ */
+(manageSkipLinkFocus = () => {
+   const skipLinks = document.querySelectorAll('a.skip-link.manage-focus');
+   if (skipLinks.length < 2) return;
+   const skipToRestaurant = skipLinks[0];
+  const skipToFilters = skipLinks[1];
+   skipToRestaurant.addEventListener('click', () => {
+    const restaurantList = document.getElementById('restaurants-list');
+    const firstLink = restaurantList.querySelectorAll('a')[0];
+    // Timeout required to activate the focus once the browser has
+    // scrolled the page down to the correct section
+    window.setTimeout(() => {
+      firstLink.focus();
+    }, 0);
   });
-} */
+   skipToFilters.addEventListener('click', () => {
+    const firstFilter = document.getElementById('neighborhoods-select');
+    // Timeout required to activate the focus once the browser has
+    // scrolled the page down to the correct section
+    window.setTimeout(() => {
+      firstFilter.focus();
+    }, 0);
+  });
+ })();
