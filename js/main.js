@@ -80,9 +80,9 @@ initMap = () => {
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
     mapboxToken: 'pk.eyJ1IjoibWFya3VzbW9ybGV5IiwiYSI6ImNqbGtrYXo1bTBucGozd29zYXh4Z3V0azQifQ.9APQ0-wLdpkFPzEZnBEN4Q',
     maxZoom: 18,
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-      '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-      'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    attribution: 'Map data &copy; <a tabindex="0" href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+      '<a tabindex="0" href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+      'Imagery © <a tabindex="0" href="https://www.mapbox.com/">Mapbox</a>',
     id: 'mapbox.streets'
   }).addTo(newMap);
 
@@ -148,8 +148,13 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.alt = 'restaurant';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.srcset = `${DBHelper.imageUrlForRestaurantX3(restaurant)} 500w,
+                  ${DBHelper.imageUrlForRestaurantX2(restaurant)} 900w,
+                  ${DBHelper.imageUrlForRestaurantX1(restaurant)} 1200w,`;
+
+  image.alt = 'restaurant ' + restaurant.name;
+
   li.append(image);
 
   const name = document.createElement('h1');
@@ -187,29 +192,3 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 
 }
-/**
- * Manage focus should the user use the skip links
- */
-(manageSkipLinkFocus = () => {
-   const skipLinks = document.querySelectorAll('a.skip-link.manage-focus');
-   if (skipLinks.length < 2) return;
-   const skipToRestaurant = skipLinks[0];
-  const skipToFilters = skipLinks[1];
-   skipToRestaurant.addEventListener('click', () => {
-    const restaurantList = document.getElementById('restaurants-list');
-    const firstLink = restaurantList.querySelectorAll('a')[0];
-    // Timeout required to activate the focus once the browser has
-    // scrolled the page down to the correct section
-    window.setTimeout(() => {
-      firstLink.focus();
-    }, 0);
-  });
-   skipToFilters.addEventListener('click', () => {
-    const firstFilter = document.getElementById('neighborhoods-select');
-    // Timeout required to activate the focus once the browser has
-    // scrolled the page down to the correct section
-    window.setTimeout(() => {
-      firstFilter.focus();
-    }, 0);
-  });
- })();
