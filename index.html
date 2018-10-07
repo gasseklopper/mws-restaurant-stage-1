@@ -37,34 +37,34 @@
 
 	<header id="header">
 			<a href="#restaurants-list" class="">Skip to restaurant listings</a>
-		<nav>
-			<h1><a href="/" tabindex="1">Restaurant Reviews</a></h1>
+		<nav role="navigation" aria-label="Main navigation">
+			<h1 role="heading" aria-level="1"><a href="/" tabindex="1">Restaurant Reviews</a></h1>
 		</nav>
 	</header>
 
-	<main id="maincontent"	>
-		<a href="#restaurants-list" class="skip-link manage-focus">Skip over leaf Map</a>
+	<main id="maincontent" role="main">
+		<a href="#filter-options-nav" class="skip-link manage-focus">Skip over leaf Map to Filter Options</a>
 		<section id="map-container" >
 			<div id="map"></div>
 		<a href="#header" class="skip-link manage-focus">Skip over leaf Map to Start</a>
 		</section>
 
-		<section>
+		<section id="filter-options-nav">
 			<div class="filter-options" >
 				<h2 tabindex="2">Filter Results</h2>
-				<label for="neighborhoods-select" tabindex="3">neighborhoods
+				<label role="listbox" for="neighborhoods-select" tabindex="3">neighborhoods
 				<select id="neighborhoods-select" tabindex="4" name="neighborhoods" onchange="updateRestaurants()">
-					<option value="all">All Neighborhoods</option>
+					<option value="all" role="option">All Neighborhoods</option>
 				</select>
 				</label>
 				<label for="cuisines-select" tabindex="5">cuisines
 				<select id="cuisines-select" tabindex="6" name="cuisines" onchange="updateRestaurants()">
-					<option value="all">All Cuisines</option>
+					<option value="all" role="option">All Cuisines</option>
 				</select>
 				</label>
 			</div>
 			<div class="restaurant_wrapper">
-				<ul id="restaurants-list"></ul>
+				<ul id="restaurants-list" role="list"></ul>
 			</div>
 		</section>
 
@@ -74,7 +74,7 @@
 	<script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
 	<script type="application/javascript" charset="utf-8" src="js/main.js"></script>
 
-	<footer id="footer">
+	<footer id="footer" role="contentinfo">
 		Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
 	</footer>
 
