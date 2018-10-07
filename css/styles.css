@@ -88,6 +88,9 @@ nav h1 a {
 		padding-bottom: 3em;
 	}
 }
+.skip-link {
+display: none;
+}
 
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {

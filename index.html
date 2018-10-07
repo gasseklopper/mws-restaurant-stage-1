@@ -36,13 +36,13 @@
 
 
 	<header id="header">
-			<a href="#restaurants-list" class="">Skip to restaurant listings</a>
+			<a href="#restaurants-list" class="skip-link">Skip to restaurant listings</a>
 		<nav role="navigation" aria-label="Main navigation">
 			<h1 role="heading" aria-level="1"><a href="index.html" tabindex="1">Restaurant Reviews</a></h1>
 		</nav>
 	</header>
 
-	<main id="maincontent" role="main">
+	<main id="maincontent" role="main" tabindex="-1">
 		<a href="#filter-options-nav" class="skip-link manage-focus">Skip over leaf Map to Filter Options</a>
 		<section id="map-container" >
 			<div id="map"></div>
@@ -63,8 +63,8 @@
 				</select>
 
 			</div>
-			<div class="restaurant_wrapper">
-				<ul id="restaurants-list"</ul>
+			<div class="restaurant_wrapper" tabindex="7">
+				<ul id="restaurants-list" </ul>
 			</div>
 		</section>
 
