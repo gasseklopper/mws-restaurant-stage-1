@@ -5,10 +5,10 @@
 ## Project Overview: Stage 1
 
 ### How to use
-	1. i have added communication with the github api port to get the restaurant.json running, so i can run this project from github.io
+1. i have added communication with the github api port to get the restaurant.json running, so i can run this project from github.io
 	click this link  [Project Restaurant](https://gasseklopper.github.io/restaurant/index.html)
 
-	2. local i hosted this project with atom-live-server with the right url and port
+2. local i hosted this project with atom-live-server with the right url and port
 
 ### Another way to start locally
 
