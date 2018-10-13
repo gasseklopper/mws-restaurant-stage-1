@@ -300,10 +300,11 @@ display: none;
 }
 .inside #footer {
 	bottom: 0;
-	/*position: fixed;
-	width: 100%;*/
+	position: fixed;
+	width: 100%;
 }
 #restaurant-name {
+text-align: center;
 	color: #f18200;
 	font-family: Arial,sans-serif;
 	font-size: 20pt;
@@ -314,15 +315,26 @@ display: none;
 	line-height: 1.1;
 }
 #restaurant-img {
-	width: 90%;
+	width: 100%;
+}
+@media (max-width: 1090px) {
+	#restaurant-img {
+		width: 100%;
+	}
+}
+
+@media (max-width: 590px) {
+	#restaurant-img {
+		width: 100%;
+	}
 }
 #restaurant-address {
 	font-size: 12pt;
-	margin: 10px 0px;
+	margin: 10px 0px 5px 20px;
 }
 #restaurant-cuisine {
 	background-color: #333;
-	color: #ddd;
+	color: #fff;
 	font-size: 12pt;
 	font-weight: 300;
 	letter-spacing: 10px;
@@ -330,7 +342,7 @@ display: none;
 	padding: 2px 0;
 	text-align: center;
 	text-transform: uppercase;
-	width: 90%;
+	width: 100%;
 }
 
 @media (max-width: 1090px) {
@@ -352,7 +364,7 @@ margin-top: 130px;
 
 @media (max-width: 1090px) {
 	#restaurant-container, #reviews-container {
-		width: 75%;
+		width: 100%;
 		position: inherit;
 	}
 	#restaurant-container {
@@ -392,58 +404,53 @@ margin-top: 0;
 }
 
 #reviews-container {
-	/*padding: 30px 40px 80px;*/
+margin-bottom: 60px;
 }
 #reviews-container h2 {
+	margin-top: 10px;
+	text-align: center;
 	color: #f58500;
 	font-size: 24pt;
 	font-weight: 300;
 	letter-spacing: -1px;
 	padding-bottom: 1pt;
 }
+
 #reviews-list {
-	margin: 0;
-	padding: 0;
+text-align: left;
 }
+
 #reviews-list ul {
-padding: 0 20px 20px;
+
 }
 
 #reviews-list li {
 	background-color: #fff;
-		border: 2px solid #f3f3f3;
+	border: 2px solid #f3f3f3;
 	display: block;
 	list-style-type: none;
-	margin: 0 0 30px;
-	overflow: hidden;
-	padding: 0 0px 20px;
-	width: 85%;
+	width: 100%;
+	margin-bottom: 20px;
+	margin-left: -20px;
+
 }
 
 @media (max-width: 1090px) {
 	#reviews-list li {
-			/*position: relative;*/
-text-align: left;
-			width: 98%;
+		text-align: left;
+		width: 98%;
 	}
 }
 #reviews-list li p {
 	margin: 20px 10px 10px 20px;
 }
+#restaurant-hours {
+	margin: 0px 0px 0px 20px;
+}
 #restaurant-hours td {
 	color: #666;
 }
-@media (max-width: 1090px) {
-	#restaurant-img {
-		width: 85%;
-	}
-}
 
-@media (max-width: 590px) {
-	#restaurant-img {
-		width: 100%;
-	}
-}
 /* ====================== Lefleat Map styling ====================== */
 .leaflet-container {
 	position: relative;
