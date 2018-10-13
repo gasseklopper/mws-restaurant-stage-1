@@ -266,7 +266,6 @@ display: none;
 	top: 0;
 	width: 100%;
 	z-index: 2000;
-background-color: red;
 }
 
 
@@ -296,7 +295,6 @@ background-color: red;
 	}
 }
 .inside #map {
-	background-color: red;
 	height: 100%;
 	width: 100%;
 }
