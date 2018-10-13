@@ -225,7 +225,7 @@ display: none;
 		background-color: #eee;
 		font-size: 17px;
 		margin: 0;
-		width: calc(100%);
+
 }
 
 @media (max-width: 490px) {
@@ -265,9 +265,11 @@ display: none;
 	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: 1000;
-
+	z-index: 2000;
+background-color: red;
 }
+
+
 .inside #map-container {
 	background: blue none repeat scroll 0 0;
 	height: 87%;
@@ -280,18 +282,28 @@ display: none;
 	.inside #map-container {
 		width: 100%;
 		height: 30%;
+		top: 170px;
+		position: absolute;
+	}
+}
+
+@media (max-width: 400px) {
+	.inside #map-container {
+		width: 100%;
+		height: 35%;
+		top: 170px;
 		position: absolute;
 	}
 }
 .inside #map {
-	background-color: #ccc;
+	background-color: red;
 	height: 100%;
 	width: 100%;
 }
 .inside #footer {
 	bottom: 0;
-	position: fixed;
-	width: 100%;
+	/*position: fixed;
+	width: 100%;*/
 }
 #restaurant-name {
 	color: #f18200;
@@ -325,22 +337,56 @@ display: none;
 
 @media (max-width: 1090px) {
 	#restaurant-cuisine {
-		width: 85%;
+		width: 100%;
 	}
 }
 
 #restaurant-container, #reviews-container {
 	border-bottom: 1px solid #d9d9d9;
 	border-top: 1px solid #fff;
-	padding: 140px 40px 30px;
+	position: inherit;
 	width: 50%;
 }
 
+#restaurant-container {
+margin-top: 130px;
+}
+
 @media (max-width: 1090px) {
-#restaurant-container, #reviews-container {
-margin-top: 50%;
+	#restaurant-container, #reviews-container {
+		width: 75%;
+		position: inherit;
+	}
+	#restaurant-container {
+		margin-top: 580px;
+	}
+	#reviews-container {
+		margin-top: 0;
+	}
+}
+
+@media (max-width: 590px) {
+	#restaurant-container, #reviews-container {
+		margin-top: 50%;
 		width: 100%;
-position: relative;
+		position: relative;
+	}
+	#restaurant-container {
+margin-top: 580px;
+	}
+	#reviews-container {
+margin-top: 0;
+	}
+}
+
+@media (max-width: 414px) {
+	#restaurant-container, #reviews-container {
+		margin-top: 50%;
+		width: 100%;
+		position: relative;
+	}
+	#restaurant-container {
+margin-top: 410px;
 	}
 	#reviews-container {
 margin-top: 0;
@@ -348,7 +394,7 @@ margin-top: 0;
 }
 
 #reviews-container {
-	padding: 30px 40px 80px;
+	/*padding: 30px 40px 80px;*/
 }
 #reviews-container h2 {
 	color: #f58500;
@@ -361,6 +407,10 @@ margin-top: 0;
 	margin: 0;
 	padding: 0;
 }
+#reviews-list ul {
+padding: 0 20px 20px;
+}
+
 #reviews-list li {
 	background-color: #fff;
 		border: 2px solid #f3f3f3;
@@ -369,8 +419,15 @@ margin-top: 0;
 	margin: 0 0 30px;
 	overflow: hidden;
 	padding: 0 0px 20px;
-	/*position: relative;*/
 	width: 85%;
+}
+
+@media (max-width: 1090px) {
+	#reviews-list li {
+			/*position: relative;*/
+text-align: left;
+			width: 98%;
+	}
 }
 #reviews-list li p {
 	margin: 20px 10px 10px 20px;
@@ -381,6 +438,12 @@ margin-top: 0;
 @media (max-width: 1090px) {
 	#restaurant-img {
 		width: 85%;
+	}
+}
+
+@media (max-width: 590px) {
+	#restaurant-img {
+		width: 100%;
 	}
 }
 /* ====================== Lefleat Map styling ====================== */
